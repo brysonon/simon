@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+  }
+  
+  header {
+    flex: 0 50px;
+    background: hsl(180, 10%, 10%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  
+  footer {
+    flex: 0 30px;
+    align-items: center;
+    background: hsl(180, 10%, 10%);
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  
+  footer a {
+    float: right;
+  }
+  
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  
+  @media (orientation: portrait) {
+    header {
+      flex-direction: column;
+    }
+    main {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-height: 300px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }

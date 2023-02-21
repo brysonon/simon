@@ -16,36 +16,32 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-dark text-light">
-    <div class="container">
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
-          <h1 style="color:white">Simon<sup>&copy;</sup></h1>
-        </a>
   
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="home.html" class="nav-link px-2 link-light">Home</a></li>
-          <li><a href="play.html" class="nav-link px-2 link-light">Play</a></li>
-          <li><a href="scores.html" class="nav-link px-2 link-light">Scores</a></li>
-          <li><a href="about.html" class="nav-link px-2 link-light">About</a></li>
-        </ul>
-      </header>
-    </div>    
+  <body class="bg-secondary text-light">
+    <header class="col-xs-1">
+      <a class="navbar-brand" href="#">
+        <h4 style="color:white">Simon<sup>&copy;</sup></h4>
+      </a>
 
-    <main>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="home.html" class="nav-link px-2 link-light">Home</a></li>
+        <li><a href="play.html" class="nav-link px-2 link-light">Play</a></li>
+        <li><a href="scores.html" class="nav-link px-2 link-light">Scores</a></li>
+        <li><a href="about.html" class="nav-link px-2 link-light">About</a></li>
+      </ul>
+    </header>
+
+    <main class="justify-content-center text-center">
       <h4>Login to play</h4>
       <form method="get" action="play.html">
-        <label for="name">Name:</label>
         <input type="text" placeholder="Enter your name" />
-        <button type="submit">Login</button>
+        <button type="button" class="btn btn-info btn-sm">Login</button>
       </form>
     </main>
 
-    <footer>
-      <hr />
+    <footer class="text-dark text-muted">
       <text>Bryson On</text>
-      <br />
-      <a href="https://github.com/brysonon/simon.git">GitHub</a>
+      <a class="text-reset" href="https://github.com/brysonon/simon.git">GitHub</a>
     </footer>
   </body>
 </html>
