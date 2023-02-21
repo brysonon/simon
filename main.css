@@ -10,10 +10,8 @@ body {
     background: hsl(180, 10%, 10%);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding-left: 5vw;
-    padding-right: 5vw;
   }
   
   footer {
@@ -32,7 +30,10 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-family: "Lucida Console", "Courier New", monospace;
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
   
   @media (orientation: portrait) {
@@ -44,7 +45,7 @@ body {
     }
   }
   
-  @media (max-height: 300px) {
+  @media (max-height: 400px) {
     header {
       display: none;
     }
