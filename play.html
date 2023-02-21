@@ -1,104 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--Responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Play</title>
+
+    <!--Link CSS file-->
+    <link rel="stylesheet" href="main.css" />
+
+    <!--Link Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
-    <header>
-      <h1>Simon<sup>&copy;</sup></h1>
 
-      <nav>
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="scores.html">Scores</a></li>
-          <li><a href="about.html">About</a></li>
-        </menu>
-      </nav>
+  <body class="bg-secondary text-light">
+    <header class="col-xs-1">
+      <a class="navbar-brand" href="index.html">
+        <h4 style="color:white">Simon<sup>&copy;</sup></h4>
+      </a>
 
-      <hr />
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="index.html" class="nav-link px-2 link-light">Home</a></li>
+        <li><a href="play.html" class="nav-link px-2 link-light">Play</a></li>
+        <li><a href="scores.html" class="nav-link px-2 link-light">Scores</a></li>
+        <li><a href="about.html" class="nav-link px-2 link-light">About</a></li>
+      </ul>
     </header>
 
-    <main>
-      <div>
-        <text>Player:</text>
-        <span>Unknown player</span>
+    <main class="d-flex bg-secondary align-items-center">
+      <div class="players">
+        Player:
+        <span class="player-name">Mystery player</span>
       </div>
-
-      <br />
-
-      <div>
-        <label for="count">Score:</label>
-        <input type="number" id="count" value="0"/>
-      </div>
-
-      <br />
-
-      <div>
-        <button>Reset</button>
-      </div>
-
-      <br />
-
-      <div>
-        <table>
-          <tr>
-            <td>
-              <button>
-                <svg
-                  viewBox="5 0 95 95"
-                  height="100"
-                  width="100"
-                >
-                  <path d="M 95,5 95,95 5,95 Q 5,5 95,5" fill="green" />
-                </svg>
-              </button>
-            </td>
-            <td>
-              <button>
-                <svg
-                  viewBox="0 0 95 95"
-                  height="100"
-                  width="100"
-                >
-                  <path d="M5,5 5,95 95,95 Q 95,5 5,5" fill="red" />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button>
-                <svg
-                  viewBox="5 0 95 95"
-                  height="100"
-                  width="100"
-                >
-                  <path d="M5,5 95,5 95,95 Q 5,95 5,5" fill="yellow" />
-                </svg>
-              </button>
-            </td>
-            <td>
-              <button>
-                <svg
-                  viewBox="0 0 95 95"
-                  height="100"
-                  width="100"
-                >
-                  <path d="M95,5 5,5 5,95 Q 95,95 95,5" fill="blue" />
-                </svg>
-              </button>
-            </td>
-          </tr>
-        </table>
+      <div class="game">
+        <div class="button-container">
+          <button class="button-top-left"></button>
+          <button class="button-top-right"></button>
+          <button class="button-bottom-left"></button>
+          <button class="button-bottom-right"></button>
+          <div class="controls center">
+            <div class="game-name">Simon<sup>&copy;</sup></div>
+            <div class="counter center">0</div>
+            <button class="btn btn-light btn-sm">Reset</button>
+          </div>
+        </div>
       </div>
     </main>
 
-    <footer>
-      <hr />
+    <footer class="text-dark text-muted">
       <text>Bryson On</text>
-      <br />
-      <a href="https://github.com/brysonon/simon.git">GitHub</a>
+      <a class="text-reset" href="https://github.com/brysonon/simon.git">GitHub</a>
     </footer>
   </body>
 </html>
