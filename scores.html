@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--Responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Scores</title>
+
+    <!--Link CSS file-->
+    <link rel="stylesheet" href="main.css" />
+
+    <!--Link Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
-    <header>
-      <h1>Simon<sup>&copy;</sup></h1>
+    <header class="col-xs-1">
+      <a class="navbar-brand" href="#">
+        <h4 style="color:white">Simon<sup>&copy;</sup></h4>
+      </a>
 
-      <nav>
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="scores.html">Scores</a></li>
-          <li><a href="about.html">About</a></li>
-        </menu>
-      </nav>
-
-      <hr />
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="index.html" class="nav-link px-2 link-light">Home</a></li>
+        <li><a href="play.html" class="nav-link px-2 link-light">Play</a></li>
+        <li><a href="scores.html" class="nav-link px-2 link-light">Scores</a></li>
+        <li><a href="about.html" class="nav-link px-2 link-light">About</a></li>
+      </ul>
     </header>
 
     <main>
@@ -54,11 +66,9 @@
       </table>
     </main>
 
-    <footer>
-      <hr />
+    <footer class="text-dark text-muted">
       <text>Bryson On</text>
-      <br />
-      <a href="https://github.com/brysonon/simon.git">GitHub</a>
+      <a class="text-reset" href="https://github.com/brysonon/simon.git">GitHub</a>
     </footer>
   </body>
 </html>
