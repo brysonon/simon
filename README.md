@@ -1,2 +1,2 @@
 # simon
-My demonstration of basic HTML skills
+My demonstration of basic HTML and CSS skills
