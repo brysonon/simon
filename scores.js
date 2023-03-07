@@ -25,7 +25,7 @@ function loadScores() {
         tableRow.appendChild(newScoreCell);
         tableRow.appendChild(newDateCell);
   
-        scoresTable.appendChild(rowEl);
+        scoresTable.appendChild(tableRow);
       }
     } else {
       scoresTable.innerHTML = '<tr><td colSpan=4>Be the first to score</td></tr>';
