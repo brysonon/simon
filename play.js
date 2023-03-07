@@ -6,16 +6,16 @@ const btnSounds = [
   ];
   
   class Button {
-    constructor(description, el) {
-      this.el = el;
+    constructor(description, element) {
+      this.element = element;
       this.hue = description.hue;
       this.sound = loadSound(description.file);
       this.paint(25);
     }
   
     paint(level) {
-      const background = `hsl(${this.hue}, 100%, ${level}%)`;
-      this.el.style.backgroundColor = background;
+      const background = `hsl(${this.hue}, 90%, ${level}%)`;
+      this.element.style.backgroundColor = background;
     }
   
     async press(volume) {
@@ -24,7 +24,7 @@ const btnSounds = [
       this.paint(25);
     }
   
-    // Work around Safari's rule to only play sounds if given permission.
+    // The code below works around Safari's sound-playing permissions
     async play(volume = 1.0) {
       this.sound.volume = volume;
       await new Promise((resolve) => {
@@ -39,23 +39,23 @@ const btnSounds = [
     allowPlayer;
     sequence;
     playerPlaybackPos;
-    mistakeSound;
+    errorSound;
   
     constructor() {
       this.buttons = new Map();
       this.allowPlayer = false;
       this.sequence = [];
       this.playerPlaybackPos = 0;
-      this.mistakeSound = loadSound('error.mp3');
+      this.errorSound = loadSound('error.mp3');
   
-      document.querySelectorAll('.game-button').forEach((el, i) => {
+      document.querySelectorAll('.game-button').forEach((element, i) => {
         if (i < btnSounds.length) {
-          this.buttons.set(el.id, new Button(btnSounds[i], el));
+          this.buttons.set(element.id, new Button(btnSounds[i], element));
         }
       });
   
-      const playerNameEl = document.querySelector('.player-name');
-      playerNameEl.textContent = this.getPlayerName();
+      const playerName = document.querySelector('.player-name');
+      playerName.textContent = this.getPlayerName();
     }
   
     async pressButton(button) {
@@ -63,7 +63,7 @@ const btnSounds = [
         this.allowPlayer = false;
         await this.buttons.get(button.id).press(1.0);
   
-        if (this.sequence[this.playerPlaybackPos].el.id === button.id) {
+        if (this.sequence[this.playerPlaybackPos].element.id === button.id) {
           this.playerPlaybackPos++;
           if (this.playerPlaybackPos === this.sequence.length) {
             this.playerPlaybackPos = 0;
@@ -74,7 +74,7 @@ const btnSounds = [
           this.allowPlayer = true;
         } else {
           this.saveScore(this.sequence.length - 1);
-          this.mistakeSound.play();
+          this.errorSound.play();
           await this.buttonDance(2);
         }
       }
@@ -109,8 +109,8 @@ const btnSounds = [
     }
   
     updateScore(score) {
-      const scoreEl = document.querySelector('#score');
-      scoreEl.textContent = score;
+      const playerScore = document.querySelector('#score');
+      playerScore.textContent = score;
     }
   
     async buttonDance(laps = 1) {
@@ -129,9 +129,9 @@ const btnSounds = [
     saveScore(score) {
       const userName = this.getPlayerName();
       let scores = [];
-      const scoresText = localStorage.getItem('scores');
-      if (scoresText) {
-        scores = JSON.parse(scoresText);
+      const scoresInfo = localStorage.getItem('scores');
+      if (scoresInfo) {
+        scores = JSON.parse(scoresInfo);
       }
       scores = this.updateScores(userName, score, scores);
   
