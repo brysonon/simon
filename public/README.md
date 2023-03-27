@@ -1,2 +1,2 @@
 # simon
-My demonstration of basic HTML and CSS skills
+My demonstration of web development skills like HTML, CSS, JavaScript, Node, and Express.
